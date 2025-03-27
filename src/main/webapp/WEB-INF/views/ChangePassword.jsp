@@ -15,10 +15,11 @@
        OTP: <input type="text" name="otp"/><br><br> 
 		
 		New Password: <input type="password" name="password"/><br><br> 
-		Confirm Password: <input type="password" name="confirmPassword"/><br><br> 
+		Confirm Password: <input type="password" name ="confirm password" ><br><br>
 	
 		<input type="submit" value="Update Password"/>
-       </form>
+       </form> 
+       
        
        <a href="login">Login</a>
 </body>

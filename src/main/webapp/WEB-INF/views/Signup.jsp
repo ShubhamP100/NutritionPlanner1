@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -84,7 +85,7 @@
       
       <div class="form-group">
          <label for="firstname">First Name</label>
-         <input type="text" placeholder="Enter the first name" id="firstname" name="firstname">
+         <input type="text" placeholder="Enter the first name" id="firstName" name="firstName">
       </div>
 
       <div class="form-group">
@@ -109,7 +110,7 @@
 
       <div class="form-group">
          <label>Gender</label>
-         <div class="gender-group">
+         <div class="gender-group"> 
             <input type="radio" name="gender" value="male"> Male
             <input type="radio" name="gender" value="female"> Female
             <input type="radio" name="gender" value="other"> Other
@@ -120,9 +121,18 @@
          <label for="city">City</label>
          <input type="text" placeholder="Enter your city" id="city" name="city">
       </div>
-
-      <button  type="submit" class="btn">Sign Up</button>
+      
+      <div class="form-group">
+       <select id="role" class = "text-gray-500 border-gray-400 border-1 text-lg rounded-md h-10 w-full" name="role" required>
+                <option value="">Select Role</option>
+                <option value="user">USER</option>
+                <option value="admin">ADMIN</option>
+                <option value="nutrionist">Nutritionist</option>
+            </select>
+      </div>
      
+      <button  type="submit" class="btn">Sign Up</button>
+      
       
    </form> 
    <a href="login">Login</a> 

@@ -13,18 +13,17 @@ import jakarta.persistence.Table;
 // Simple the user entity is to design the database of different roles ex: users,admins,or other stuff
 
 @Entity // to create the table
-@Table(name="users") // assign the name of table which will store in the mysql database
+@Table(name="users",uniqueConstraints = @UniqueConstraint(columnNames = "email")) // assign the name of table which will store in the mysql database
 
 
 public class UserEntity {
         
 	  @Id 
 	  @GeneratedValue(strategy = GenerationType.IDENTITY) // to generate the integer id 
-	  
 	  private Integer userId;
-	  private String firstname;
+	  private String firstName;
 	  private String lastname;
-	  @Column(unique = true)
+	  @Column(unique = true,nullable=false)
 	  private String email;
 	  private String password;
 	  private String contactno;
@@ -33,9 +32,16 @@ public class UserEntity {
 	  private String role; // user admin 
 	  private Date createdAt;// X -> today's date
 	  private Boolean active; // X -> true
+	  private String otp;
 
 	
-	   public Date getCreatedAt() {
+	   public String getOtp() {
+		return otp;
+	}
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+	public Date getCreatedAt() {
 		return createdAt;
 	}
 	public void setCreatedAt(Date createdAt) {
@@ -53,14 +59,15 @@ public class UserEntity {
 	   public void setUserId(Integer userId) {
 		this.userId = userId;
 	   }
-	    public String getFirstname() {
-	    	
-		return firstname;
-	   }
-	   public void setFirstname(String firstname) {
-		this.firstname = firstname;
-    	}
-	   public String getLastname() {
+	   
+	 
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastname() {
 		return lastname;
     	}
 	   public void setLastname(String lastname) {

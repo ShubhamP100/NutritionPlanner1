@@ -8,6 +8,7 @@
 </head>
 <body>
       <form action="sendOtp" method="post">
+      
         <label for="email">Email</label>
          <input type="text" placeholder="Enter your email" id="email" name="email">
        <br><br>
