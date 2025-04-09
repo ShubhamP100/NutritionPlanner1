@@ -8,15 +8,16 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Admin | List User</title>
+<title>Admin | EditUser</title>
 
 <jsp:include page="Admincss.jsp"></jsp:include>
 
-
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"></link>
+<!-- 
 <link href="css/dataTables.css"></link>
 <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"></link>
+-->
 </head>
 <body>
 	<jsp:include page="AdminHeader.jsp"></jsp:include>
@@ -26,11 +27,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>List User</h1>
+			<h1>EditUser</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">List User</li>
+					<li class="breadcrumb-item active">EditUser</li>
 				</ol>
 			</nav>
 		</div>
@@ -52,50 +53,34 @@
 										Users<span>/all</span>
 									</h5>
 
-  <h2>List of User</h2>
-           <table class="table datatable datatable-table table-hover" id="myTable">
-										<thead>
-											<tr>
-												<th>firstName</th>
-												<th>lastname</th>
-												<th>email</th>
-												<th>contactno</th>
-												<th>city</th>
-													<th>role</th>
-													<th>Action</th>
-											</tr>
-										</thead>
-				       <tbody>
-							<c:forEach items="${listUser}" var="us">
-									<tr>
-										
-                                        <td>${us.firstName}</td>
-                                        <td>${us.lastname}</td>
-                                        
-                                        <td>${us.email}</td>
-                                        <td>${us.contactno}</td>
-                                       
-                                         <td>${us.city}</td>
-                                          <td>${us.role}</td>
-                                           <td>
-										
-										       <a href="edituser?userId=${us.userId}" class="btn btn-warning btn-sm">
-                                              <i class="fas fa-edit"></i> Edit
-                                              </a>
-                                              <a href="deleteuser?userId=${us.userId}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">
-                                              <i class="fas fa-trash"></i> Delete
-                                              </a>
-                                              <a href="viewuser?userId=${us.userId}" class="btn btn-info btn-sm">
-                                              <i class="fas fa-eye"></i> View
-                                              </a>
-                                           </td> 
-                                         </tr>
-                                         </c:forEach>
-                                             </tbody>
-									</table>
+                  <h2>EditPage</h2>
+          
+    <form action="updateuser?userId=${user.userId}" method="post">
+        <input type="hidden" name="id" value="${user.userId}" />
 
+        <label>First-Name:</label>
+        <input type="text" name="firstName" value="${user.firstName}"  /><br><br>
+        
+        <label>Last-Name:</label>
+        <input type="text" name="lastname" value="${user.lastname}"  /><br><br>
+        
 
- 
+        <label>Email:</label>
+        <input type="email" name="email" value="${user.email}"  /><br><br>
+
+        <label>Phone:</label>
+        <input type="text" name="contactno" value="${user.contactno}" /><br><br>
+        
+         <label>City</label>
+        <input type="text" name="city" value="${user.city}" /><br><br>
+        
+        <label>Role</label>
+        <input type="text" name="role" value="${user.role}" /><br><br>
+        
+        <button type="submit">Update</button>
+    </form>
+                            
+                            
      <!-- Datatable ends here -->
 									
 
@@ -140,9 +125,7 @@
 
 	<script type="text/javascript"> // idr yeh text/js likha he
 
-	$(document).ready( function () {
-	    $('#myTable').DataTable();
-	} );
+	
 	</script>
 
 </body>

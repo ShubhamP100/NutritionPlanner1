@@ -1,11 +1,12 @@
 package com.grownited.entity;
-import jakarta.persistence.Entity;
+
+import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.sql.Date;
+import java.time.*;
 @Entity
 @Table(name="registeruser")
 
@@ -18,14 +19,13 @@ public class RegesterEntity  {
 		 
 		 private Integer userdetailid;
 		 private Integer userId;//fk
-		 private Integer age;
-		 private Float height;
-		 private Float weight;
-		 private String healthGoal;
-		 private String medicalcondition;
-		
-		 private String activityLevel;
-
+		 private Integer Age;
+		 private Float Height;
+		 private Float Weight;
+		 private String HealthGoal;// bulking lean etc
+		 private String Medicalcondition; // diabetes / lean / etc  
+		 private String ActivityLevel;
+         private LocalDate Createdat;
 		public Integer getUserdetailid() {
 			return userdetailid;
 		}
@@ -43,52 +43,62 @@ public class RegesterEntity  {
 		}
 
 		public Integer getAge() {
-			return age;
+			return Age;
 		}
 
 		public void setAge(Integer age) {
-			this.age = age;
+			Age = age;
 		}
 
 		public Float getHeight() {
-			return height;
+			return Height;
 		}
 
 		public void setHeight(Float height) {
-			this.height = height;
+			Height = height;
 		}
 
 		public Float getWeight() {
-			return weight;
+			return Weight;
 		}
 
 		public void setWeight(Float weight) {
-			this.weight = weight;
+			Weight = weight;
 		}
 
 		public String getHealthGoal() {
-			return healthGoal;
+			return HealthGoal;
 		}
 
 		public void setHealthGoal(String healthGoal) {
-			this.healthGoal = healthGoal;
+			HealthGoal = healthGoal;
 		}
 
 		public String getMedicalcondition() {
-			return medicalcondition;
+			return Medicalcondition;
 		}
 
 		public void setMedicalcondition(String medicalcondition) {
-			this.medicalcondition = medicalcondition;
+			Medicalcondition = medicalcondition;
 		}
 
 		public String getActivityLevel() {
-			return activityLevel;
+			return ActivityLevel;
 		}
 
 		public void setActivityLevel(String activityLevel) {
-			this.activityLevel = activityLevel;
+			ActivityLevel = activityLevel;
 		}
+
+		public LocalDate getCreatedat() {
+			return Createdat;
+		}
+
+		public void setCreatedat(LocalDate createdat) {
+			Createdat = createdat;
+		}
+		
+
 		
 	}
 

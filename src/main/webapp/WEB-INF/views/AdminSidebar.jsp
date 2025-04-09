@@ -1,27 +1,30 @@
 <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
+
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="admindashboard"> 
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-person"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="NewUser">
+        <li>
+            <a href="signup">
               <i class="bi bi-circle"></i><span>Add user</span>
             </a>
           </li>
-          <li>
-            <a href="ListUser">
+        <li>
+            <a href="newusers">
               <i class="bi bi-circle"></i><span>List user</span>
             </a>
           </li>
@@ -36,12 +39,12 @@
         <!-- Nutionist section  -->
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Add Nutrionist</span>
-            </a>
+            <a href="nutrionist"> 
+              <i class=""></i><span>Add Nutrionist</span>
+            </a> 
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a href="NewNutrionist">
               <i class="bi bi-circle"></i><span>List nutrionist</span>
             </a>
           </li>
@@ -51,7 +54,7 @@
      
         </ul>
       </li><!-- End Forms Nav -->
-
+  <!--  
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -76,7 +79,7 @@
       <li class="nav-heading">Manage</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="Profile">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -85,7 +88,7 @@
       
    
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
+        <a class="nav-link collapsed" href="login">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Login</span>
         </a>

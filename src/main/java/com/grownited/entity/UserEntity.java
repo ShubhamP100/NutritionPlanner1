@@ -1,7 +1,9 @@
 package com.grownited.entity;
 
 
-import java.util.Date;
+//import java.util.Date;
+
+import java.time.LocalDate;
 
 import jakarta.persistence.*;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +31,13 @@ public class UserEntity {
 	  private String contactno;
 	  private String gender;
 	  private String city;
-	  private String role; // user admin 
-	  private Date createdAt;// X -> today's date
+	 // private String role; // user admin 
+	  LocalDate createdAt;// X -> today's date
 	  private Boolean active; // X -> true
 	  private String otp;
+
+	    @Column(nullable = false)
+	    private String role = "user"; // Default role
 
 	
 	   public String getOtp() {
@@ -41,12 +46,7 @@ public class UserEntity {
 	public void setOtp(String otp) {
 		this.otp = otp;
 	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+	
 	public Boolean getActive() {
 		return active;
 	}
@@ -103,6 +103,7 @@ public class UserEntity {
 	  public void setCity(String city) {
 		this.city = city;
 	  }
+	  
 	  public String getRole() {
 		return role;
 	  }

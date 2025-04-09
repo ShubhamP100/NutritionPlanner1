@@ -32,10 +32,7 @@ public class SessionController {
 	public String signup() {
 		  return "Signup";  // returns the jsp file
 	}
-    @GetMapping("home")
-    public String Home() {
-    	return "Home";
-    }
+   
     @GetMapping("login")
     public String login(String email,String password) {
     	return "Login"; 
@@ -51,10 +48,11 @@ public class SessionController {
     	         System.out.println(user.getEmail());
     	         System.out.println(user.getGender());
     	         */
+    	         
     	         String encPassword = encoder.encode(userEntity.getPassword());
  		         userEntity.setPassword(encPassword);
     	        
- 		         userEntity.setRole("ADMIN");//
+ 		        // userEntity.setRole("ADMIN");//
     	         
     	 		 repositoryuser.save(userEntity);//insert query 
     	 	     System.out.println(userEntity.getEmail() + "" + userEntity.getFirstName() );
@@ -63,7 +61,7 @@ public class SessionController {
                 return "Login";		 
     	} 
     
-    @PostMapping("authenticate")
+    @PostMapping("/authenticate")
     public String authenticate(String email,String password,Model model, HttpSession session) {
     	 System.out.println(email);
     	 System.out.println(password);
@@ -89,13 +87,15 @@ public class SessionController {
 			if (ans == true) {
 				model.addAttribute("user",dbUser);
 				session.setAttribute("user", dbUser); // session -> user set
-				if (dbUser.getRole().equals("ADMIN") && dbUser.getRole().equals("Nutritionist")) {
-
-					return "redirect:/admindashboard";
-				} else if (dbUser.getRole().equals("User")) {
+				if (dbUser.getRole().equalsIgnoreCase("ADMIN") || dbUser.getRole().equals("Nutritionist")) {
                     
+					// 
+					return "redirect:/admindashboard";
+				} else if (dbUser.getRole().equalsIgnoreCase("User")) {
+				
 					return "redirect:/home";
-				} else {
+				}//return "redirect:/newuser";// h} 
+					else {
 					model.addAttribute("error", "Please contact Admin with Error Code #0991");
 					return "Login";
 				}//end of else
@@ -144,7 +144,9 @@ public class SessionController {
     	}
      	return "ChangePassword";
     }
-    @PostMapping("updatepassword")
+    
+    // update password
+    @PostMapping("/updatepassword")
     public String updatePassword(String email,String otp,String password,Model model) {
     	Optional<UserEntity> op = repositoryuser.findByEmail(email);
 		if (op.isEmpty()) {
@@ -152,7 +154,7 @@ public class SessionController {
 			return "ChangePassword";
 		} else {
 			UserEntity user = op.get();
-			if (user.getOtp().equals(otp)) {
+			if (user.getOtp().equalsIgnoreCase(otp)) { 
 				String encPwd = encoder.encode(password);
 				user.setPassword(encPwd);
 				user.setOtp("");

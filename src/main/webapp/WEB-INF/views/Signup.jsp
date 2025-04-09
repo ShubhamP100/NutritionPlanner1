@@ -107,15 +107,22 @@
          <label for="confirm-password">Confirm Password</label>
          <input type="password" placeholder="Re-enter your password" id="confirm-password" name="confirm-password">
       </div>
+      
+      <div class="form-group">
+         <label for="confirm-password">Contact no</label>
+         <input type="password" placeholder="Enter your contact no" id="contact-no" name="contactno">
+      </div>
 
       <div class="form-group">
          <label>Gender</label>
          <div class="gender-group"> 
             <input type="radio" name="gender" value="male"> Male
             <input type="radio" name="gender" value="female"> Female
-            <input type="radio" name="gender" value="other"> Other
+       
          </div>
       </div>
+      
+      
 
       <div class="form-group">
          <label for="city">City</label>
@@ -123,13 +130,15 @@
       </div>
       
       <div class="form-group">
-       <select id="role" class = "text-gray-500 border-gray-400 border-1 text-lg rounded-md h-10 w-full" name="role" required>
+       <select id="role" class = "text-gray-500 border-gray-400 border-1 text-lg rounded-md h-10 w-full" name="role" >
                 <option value="">Select Role</option>
                 <option value="user">USER</option>
-                <option value="admin">ADMIN</option>
+                
                 <option value="nutrionist">Nutritionist</option>
+                
             </select>
       </div>
+       <input type="hidden" name="role" value="user">
      
       <button  type="submit" class="btn">Sign Up</button>
       

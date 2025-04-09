@@ -1,145 +1,286 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en"> 
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutritionPlanner | Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    body {
+      background-color: #2d2d39;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .login-container {
+      display: flex;
+      background-color: #1f1f2c;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 80%;
+      max-width: 1000px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .login-left {
+      flex: 1;
+      background-color: #272735;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 2rem;
+    }
+    
+    .illustration {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .login-right {
+      flex: 1;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .login-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .login-header h1 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .login-header span {
+      font-weight: 400;
+      opacity: 0.7;
+    }
+    
+    .input-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background-color: #2d2d39;
+      border: 1px solid #3d3d4d;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    
+    .form-control:focus {
+      border-color: #4285f4;
+    }
+    
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .checkbox {
+      accent-color: #4285f4;
+    }
+    
+    .forgot-link {
+      color: #4285f4;
+      text-decoration: none;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .btn-primary {
+      background-color: #4285f4;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn-primary:hover {
+      background-color: #3367d6;
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+      color: #8f8f9d;
+    }
+    
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: #3d3d4d;
+    }
+    
+    .divider span {
+      padding: 0 1rem;
+    }
+    
+    .btn-facebook {
+      background-color: #3b5998;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .btn-facebook:hover {
+      background-color: #344e86;
+    }
+    
+    .btn-twitter {
+      background-color: #1da1f2;
+      color: white;
+    }
+    
+    .btn-twitter:hover {
+      background-color: #0d95e8;
+    }
+    
+    .app-logo {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: white;
+    }
+    
+    .app-logo span {
+      color: #4285f4;
+    }
+    
+    .deco-dots {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px dashed rgba(66, 133, 244, 0.3);
+      top: 25%;
+      left: 35%;
+      z-index: -1;
+    }
+    
+    .deco-circle {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid rgba(66, 133, 244, 0.2);
+      top: 15%;
+      right: 15%;
+      z-index: -1;
+    }
+    
+    @media (max-width: 768px) {
+      .login-container {
+        flex-direction: column;
+        width: 95%;
+      }
+      
+      .login-left {
+        display: none;
+      }
+      
+      .login-right {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
 
-  <!--begin::Head-->
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE 4 | Login </title>
-    <!--begin::Primary Meta Tags-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-   
- <!--begin::Fonts-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
-      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
-      crossorigin="anonymous"
-    />
-    <!--end::Fonts-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css"
-      integrity="sha256-tZHrRjVqNSRyWg2wbppGnT833E/Ys0DHWGwT04GiqQg="
-      crossorigin="anonymous"
-    />
-    <!--end::Third Party Plugin(OverlayScrollbars)-->
-    <!--begin::Third Party Plugin(Bootstrap Icons)-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-      integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI="
-      crossorigin="anonymous"
-    />
-    <!--end::Third Party Plugin(Bootstrap Icons)-->
-    <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="../../../dist/css/adminlte.css" />
-    <!--end::Required Plugin(AdminLTE)-->
-  </head>
-  <!--end::Head-->
-  <!--begin::Body-->
-  <body class="login-page bg-body-secondary">
-    <div class="login-box">
-      <div class="login-logo">
-        <a href="../index2.html"><b>Nutrition</b>Planner</a>
-      </div>
-      <!-- /.login-logo --> 
-      <div class="card">
-        <div class="card-body login-card-body">
-          <p class="login-box-msg">Sign in to start your session</p>
-          <form action="authenticate" method="post">
-            <div class="input-group mb-3">
-              <input type="email" class="form-control" name="email" placeholder="Email" />
-              <div class="input-group-text"><span class="bi bi-envelope"></span></div>
-            </div>
-            <div class="input-group mb-3">
-              <input type="password" class="form-control" name="password" placeholder="Password" />
-              <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
-            </div>
-            <!--begin::Row-->
-            <div class="row">
-              <div class="col-8"> 
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                  <label class="form-check-label" for="flexCheckDefault"> Remember Me </label>
-                </div>
-              </div>
-              <!-- /.col -->
-              <div class="col-4">
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Sign In</button>
-                </div>
-              </div>
-              <!-- /.col -->
-            </div>
-            <!--end::Row-->
-          </form>
-          
-          <span class="text-danger">${error}</span>
-          
-          <div class="social-auth-links text-center mb-3 d-grid gap-2">
-            <p>- OR -</p>
-           
-            <!-- <a href="#" class="btn btn-danger">
-              <i class="bi bi-google me-2"></i> Sign in using Google+
-            </a> -->
-          </div>
-          <!-- /.social-auth-links -->
-          <p class="mb-1"><a href="forgetpassword">I forgot my password</a></p>
-          <p class="mb-0">
-            <a href="signup" class="text-center">  </a>
-          </p>
-        </div>
-        <!-- /.login-card-body -->
-      </div>
+<body>
+  <div class="login-container">
+    <div class="login-left">
+      <div class="app-logo"><span>Nutrition</span>Planner</div>
+      <img src="assets/img/nutionist.png"/>
+      <div class="deco-dots"></div>
+      <div class="deco-circle"></div>
     </div>
-    <!-- /.login-box -->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
-      integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ="
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
-    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="../../../dist/js/adminlte.js"></script>
-    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
-    <script>
-      const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
-      const Default = {
-        scrollbarTheme: 'os-theme-light',
-        scrollbarAutoHide: 'leave',
-        scrollbarClickScroll: true,
-      };
-      document.addEventListener('DOMContentLoaded', function () {
-        const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
-        if (sidebarWrapper && typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== 'undefined') {
-          OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
-            scrollbars: {
-              theme: Default.scrollbarTheme,
-              autoHide: Default.scrollbarAutoHide,
-              clickScroll: Default.scrollbarClickScroll,
-            },
-          });
-        }
-      });
-    </script>
-    <!--end::OverlayScrollbars Configure-->
-    <!--end::Script-->
-  </body>
-  <!--end::Body-->
+    
+    <div class="login-right">
+    <%
+    String error = request.getParameter("error");
+    if ("true".equals(error)) {
+%>
+    <div style="color: red; margin-bottom: 1rem;">Invalid email or password</div>
+<%
+    }
+%>
+    
+      <div class="login-header">
+        <h1>Welcome Back</h1>
+        <span>Sign in to start your session</span>
+      </div>
+      
+      <form action="authenticate" method="post">
+        <div class="input-group">
+          <input type="email" class="form-control" name="email" placeholder="Email address" />
+        </div>
+        
+        <div class="input-group">
+          <input type="password" class="form-control" name="password" placeholder="Password" />
+        </div>
+        
+        <div class="remember-forgot">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" class="checkbox" />
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="forgetpassword" class="forgot-link">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">SIGN IN</button>
+      </form>
+       <!-- 
+      <div class="divider">
+        <span>OR</span>
+      </div>
+      
+      <span>Don't have an account</span>
+       <button type="submit"  class="btn btn-primary">Sign-up</button>
+      
+      -->
+      
+      
+    </div>
+  </div>
+</body>
 </html>
