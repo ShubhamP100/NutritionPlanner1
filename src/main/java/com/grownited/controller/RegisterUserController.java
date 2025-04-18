@@ -47,14 +47,15 @@ public class RegisterUserController {
 //	savevehicle 
 	@PostMapping("saveuserss")
 	public String saveUser(RegesterEntity entityRegister,HttpSession session) {
-		//UserEntity user= (UserEntity) session.getAttribute("user");
-		
+		UserEntity user= (UserEntity) session.getAttribute("user");
+		Integer userId = user.getUserId();
+		entityRegister.setUserId(userId);
 		
 		useregister.save(entityRegister);
 	
 		
 
-		return "redirect:/newusers";// jsp name
+		return "redirect:/homee";// jsp name
 		
 		/*
 		 Infuture -> 

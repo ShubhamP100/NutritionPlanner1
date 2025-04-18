@@ -7,6 +7,7 @@ public class NutrionistEntity {
 
 	
 	private Integer Nutrionistid;//fk
+	
 	@Id
 	private Integer nutriid;//pk
 	

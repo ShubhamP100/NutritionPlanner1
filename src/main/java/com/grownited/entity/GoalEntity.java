@@ -1,6 +1,7 @@
 package com.grownited.entity;
 
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import jakarta.persistence.*;
@@ -8,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 
 
 // Simple the user entity is to design the database of different roles ex: users,admins,or other stuff
@@ -21,17 +23,19 @@ public class GoalEntity {
 	  @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer goalId;
 	private Integer userId;// fk se hoga
-	private String GoalType;
-    private Float TargetWeight;
-	private Float TargetMuscleMass;
-	private Float HeightGoal;
-	private Date TargetDate;
-	private Float CalorieIntakeGoal;
-	private Float ProteinIntakeGoal;
-	private Float FatIntakeGoal;
-	private Float CarbIntakeGoal;
-	private Date createdAt;
-	private Date updatedAt;
+	private String goalType;
+	//private String goalType
+	private Float targetWeight;
+	private String status;
+	private Float targetMuscleMass;
+	private LocalDate targetDate;
+	private Float calorieIntakeGoal;
+	private Float proteinIntakeGoal;
+	private Float fatIntakeGoal;
+	private Float carbIntakeGoal;
+	private LocalDate createdAt;
+	private LocalDate updatedAt;
+
 	
 	
 	
@@ -48,73 +52,77 @@ public class GoalEntity {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
+	
+	
 	public String getGoalType() {
-		return GoalType;
+		return goalType;
 	}
 	public void setGoalType(String goalType) {
-		GoalType = goalType;
+		this.goalType = goalType;
 	}
 	public Float getTargetWeight() {
-		return TargetWeight;
+		return targetWeight;
 	}
 	public void setTargetWeight(Float targetWeight) {
-		TargetWeight = targetWeight;
+		this.targetWeight = targetWeight;
 	}
 	public Float getTargetMuscleMass() {
-		return TargetMuscleMass;
+		return targetMuscleMass;
 	}
 	public void setTargetMuscleMass(Float targetMuscleMass) {
-		TargetMuscleMass = targetMuscleMass;
+		this.targetMuscleMass = targetMuscleMass;
 	}
-	public Float getHeightGoal() {
-		return HeightGoal;
+	public LocalDate getTargetDate() {
+		return targetDate;
 	}
-	public void setHeightGoal(Float heightGoal) {
-		HeightGoal = heightGoal;
+	public void setTargetDate(LocalDate targetDate) {
+		this.targetDate = targetDate;
 	}
-	public Date getTargetDate() {
-		return TargetDate;
+	
+	public String getStatus() {
+		return status;
 	}
-	public void setTargetDate(Date targetDate) {
-		TargetDate = targetDate;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	public Float getCalorieIntakeGoal() {
-		return CalorieIntakeGoal;
+		return calorieIntakeGoal;
 	}
 	public void setCalorieIntakeGoal(Float calorieIntakeGoal) {
-		CalorieIntakeGoal = calorieIntakeGoal;
+		this.calorieIntakeGoal = calorieIntakeGoal;
 	}
 	public Float getProteinIntakeGoal() {
-		return ProteinIntakeGoal;
+		return proteinIntakeGoal;
 	}
 	public void setProteinIntakeGoal(Float proteinIntakeGoal) {
-		ProteinIntakeGoal = proteinIntakeGoal;
+		this.proteinIntakeGoal = proteinIntakeGoal;
 	}
 	public Float getFatIntakeGoal() {
-		return FatIntakeGoal;
+		return fatIntakeGoal;
 	}
 	public void setFatIntakeGoal(Float fatIntakeGoal) {
-		FatIntakeGoal = fatIntakeGoal;
+		this.fatIntakeGoal = fatIntakeGoal;
 	}
 	public Float getCarbIntakeGoal() {
-		return CarbIntakeGoal;
+		return carbIntakeGoal;
 	}
 	public void setCarbIntakeGoal(Float carbIntakeGoal) {
-		CarbIntakeGoal = carbIntakeGoal;
+		this.carbIntakeGoal = carbIntakeGoal;
 	}
-	public Date getCreatedAt() {
+	public LocalDate getCreatedAt() {
 		return createdAt;
 	}
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt(LocalDate createdAt) {
 		this.createdAt = createdAt;
 	}
-	public Date getUpdatedAt() {
+	public LocalDate getUpdatedAt() {
 		return updatedAt;
 	}
-	public void setUpdatedAt(Date updatedAt) {
+	public void setUpdatedAt(LocalDate updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
+	
+		
 	 
 	
 	

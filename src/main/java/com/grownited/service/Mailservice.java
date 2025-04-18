@@ -43,6 +43,20 @@ public class Mailservice {
 			mailSender.send(message);
 	    }
 	    
+	    public void sendMealReminder(String email , String name) {
+	    	String body = "Congratulations!! " + name + " Your goal was reviewed by nutritionist and an effectivee meal for the same has been sent to you, Please check it out";
+	    	String subject = "Meal Status mail";
+	    	String from = "shubhamcarrers@gmail.com";
+	    	SimpleMailMessage msg = new SimpleMailMessage();
+	    	
+	    	msg.setSubject(subject);
+	    	msg.setTo(email);
+	    	msg.setFrom(from);
+	    	msg.setText(body);
+	    	
+	    	mailSender.send(msg);
+	    }
+	    
 	
 	
 }

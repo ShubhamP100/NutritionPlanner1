@@ -32,15 +32,26 @@ public class UserEntity {
 	  private String gender;
 	  private String city;
 	 // private String role; // user admin 
-	  LocalDate createdAt;// X -> today's date
+	  private LocalDate createdAt;// X -> today's date
 	  private Boolean active; // X -> true
 	  private String otp;
+	  private String education;
+	  private String experiance;
+	  private String aboutus;
+	  private String profilepic;
 
-	    @Column(nullable = false)
-	    private String role = "user"; // Default role
+	  @Column(nullable = false)
+	   
+	  private String role ; // Default role
 
 	
-	   public String getOtp() {
+	   public LocalDate getCreatedAt() {
+			return createdAt;
+		}
+		public void setCreatedAt(LocalDate createdAt) {
+			this.createdAt = createdAt;
+		}
+	public String getOtp() {
 		return otp;
 	}
 	public void setOtp(String otp) {
@@ -110,6 +121,31 @@ public class UserEntity {
 	  public void setRole(String role) {
 		this.role = role;
 	  }
+	public String getEducation() {
+		return education;
+	}
+	public void setEducation(String education) {
+		this.education = education;
+	}
+	public String getExperiance() {
+		return experiance;
+	}
+	public void setExperiance(String experiance) {
+		this.experiance = experiance;
+	}
+	public String getAboutus() {
+		return aboutus;
+	}
+	public void setAboutus(String aboutus) {
+		this.aboutus = aboutus;
+	}
+	public String getProfilepic() {
+		return profilepic;
+	}
+	public void setProfilepic(String profilepic) {
+		this.profilepic = profilepic;
+	}
+	  
 	  
 	  
 	  

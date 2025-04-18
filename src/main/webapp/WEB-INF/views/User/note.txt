@@ -1,0 +1,11 @@
+User side flow
+
+1  User header done 
+2  User Sidebar dine
+3  Footer remaining
+4  Home page ||  dashboard baki he 
+           
+
+
+In terms of js -> Add the admin js -> into it
+

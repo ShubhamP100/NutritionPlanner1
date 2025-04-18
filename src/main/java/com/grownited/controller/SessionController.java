@@ -33,6 +33,7 @@ public class SessionController {
 		  return "Signup";  // returns the jsp file
 	}
    
+   
     @GetMapping("login")
     public String login(String email,String password) {
     	return "Login"; 
@@ -52,7 +53,7 @@ public class SessionController {
     	         String encPassword = encoder.encode(userEntity.getPassword());
  		         userEntity.setPassword(encPassword);
     	        
- 		        // userEntity.setRole("ADMIN");//
+ 		        //userEntity.setRole("user");//
     	         
     	 		 repositoryuser.save(userEntity);//insert query 
     	 	     System.out.println(userEntity.getEmail() + "" + userEntity.getFirstName() );
@@ -83,22 +84,27 @@ public class SessionController {
 			System.out.println("Entered Password: " + password);
 			System.out.println("Stored Password (Hashed): " + dbUser.getPassword());
 
-            System.out.println(dbUser.getRole()); 
+          //  System.out.println(dbUser.getRole()); 
 			if (ans == true) {
+				System.out.println(dbUser.getRole());
 				model.addAttribute("user",dbUser);
 				session.setAttribute("user", dbUser); // session -> user set
-				if (dbUser.getRole().equalsIgnoreCase("ADMIN") || dbUser.getRole().equals("Nutritionist")) {
+				if (dbUser.getRole().equalsIgnoreCase("user")) {
                     
 					// 
+					return "redirect:/homee";
+					
+				} else if (dbUser.getRole().equalsIgnoreCase("ADMIN")) {
+				   // System.out.println("role");
+					
 					return "redirect:/admindashboard";
-				} else if (dbUser.getRole().equalsIgnoreCase("User")) {
-				
-					return "redirect:/home";
-				}//return "redirect:/newuser";// h} 
-					else {
-					model.addAttribute("error", "Please contact Admin with Error Code #0991");
-					return "Login";
-				}//end of else
+					
+				} else {
+					System.out.println("Iam nutritionist");
+					return "redirect:/nutrihome";
+				}
+				//return "redirect:/newuser";// h} 
+					 
 
 			}// end of the if 
 		} 

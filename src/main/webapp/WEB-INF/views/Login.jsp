@@ -278,7 +278,7 @@
        <button type="submit"  class="btn btn-primary">Sign-up</button>
       
       -->
-      
+      <h1>${error}</h1>
       
     </div>
   </div>

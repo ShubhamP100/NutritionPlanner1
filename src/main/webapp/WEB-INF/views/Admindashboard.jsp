@@ -25,7 +25,8 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item">Home</a></li>
+        <!-- Admin ku jayega home page pe  -->
+          
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>

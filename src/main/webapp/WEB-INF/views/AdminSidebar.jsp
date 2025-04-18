@@ -1,101 +1,75 @@
 <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+<aside id="sidebar" class="sidebar" style="
+  background: linear-gradient(to bottom, #a7d7c5, #88c8b4);
+  min-height: 100vh;
+  padding-top: 1rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+">
 
+  <ul class="sidebar-nav" id="sidebar-nav">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
+    <!-- Dashboard -->
+    <li class="nav-item">
+      <a class="nav-link text-success fw-bold" href="admindashboard">
+        <i class="bi bi-speedometer2"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
 
-      <li class="nav-item">
-        <a class="nav-link " href="admindashboard"> 
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-      
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-person"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+    <!-- Users Section -->
+    <li class="nav-item">
+      <a class="nav-link collapsed text-success" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-people-fill"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
         <li>
-            <a href="signup">
-              <i class="bi bi-circle"></i><span>Add user</span>
-            </a>
-          </li>
+          <a href="signup">
+            <i class="bi bi-person-plus"></i><span>Add User</span>
+          </a>
+        </li>
         <li>
-            <a href="newusers">
-              <i class="bi bi-circle"></i><span>List user</span>
-            </a>
-          </li>
-            
-          
-        </ul>
-      </li><!-- End Components Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-prescription2"></i><span>Nutrionist</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <!-- Nutionist section  -->
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="nutrionist"> 
-              <i class=""></i><span>Add Nutrionist</span>
-            </a> 
-          </li>
-          <li>
-            <a href="NewNutrionist">
-              <i class="bi bi-circle"></i><span>List nutrionist</span>
-            </a>
-          </li>
-          
-          <!-- Nutrionist section ends here -->
-        
-     
-        </ul>
-      </li><!-- End Forms Nav -->
-  <!--  
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
+          <a href="newusers">
+            <i class="bi bi-list-ul"></i><span>List Users</span>
+          </a>
+        </li>
+      </ul>
+    </li>
 
-    
-     
+    <!-- Nutritionist Section -->
+    <li class="nav-item">
+      <a class="nav-link collapsed text-success" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-heart-pulse"></i><span>Nutritionist</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="nutrionist">
+            <i class="bi bi-person-plus"></i><span>Add Nutritionist</span>
+          </a>
+        </li>
+        <li>
+          <a href="NewNutrionist">
+            <i class="bi bi-list-task"></i><span>List Nutritionist</span>
+          </a>
+        </li>
+      </ul>
+    </li>
 
-      <li class="nav-heading">Manage</li>
+    <!-- Manage Section -->
+    <li class="nav-heading text-success">Manage</li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="Profile">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed text-success" href="personalprofile">
+        <i class="bi bi-person-circle"></i>
+        <span>Profile</span>
+      </a>
+    </li>
 
-      
-   
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="login">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
+    <li class="nav-item">
+      <a class="nav-link collapsed text-danger" href="login">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Login</span>
+      </a>
+    </li>
 
-      
-
-    </ul>
-
-  </aside><!-- End Sidebar-->
+  </ul>
+</aside><!-- End Sidebar-->

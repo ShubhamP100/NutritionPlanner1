@@ -1,9 +1,11 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
 <!DOCTYPE html>
 <html>
 <head>
+	
+	
 <meta charset="UTF-8">
 <title>Signup</title>
 <style>
@@ -110,7 +112,7 @@
       
       <div class="form-group">
          <label for="confirm-password">Contact no</label>
-         <input type="password" placeholder="Enter your contact no" id="contact-no" name="contactno">
+         <input type="text" placeholder="Enter your contact no" id="contact-no" name="contactno">
       </div>
 
       <div class="form-group">
@@ -123,7 +125,7 @@
       </div>
       
       
-
+  
       <div class="form-group">
          <label for="city">City</label>
          <input type="text" placeholder="Enter your city" id="city" name="city">
@@ -138,7 +140,7 @@
                 
             </select>
       </div>
-       <input type="hidden" name="role" value="user">
+       
      
       <button  type="submit" class="btn">Sign Up</button>
       

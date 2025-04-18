@@ -22,17 +22,25 @@ public class AdminController {
 	public String adminDashboard() {
 		return "Admindashboard";
 	}
+	@GetMapping("adminhome")
+	public String adminhome() {
+		return "Home";
+	}
 	@GetMapping("nutrionist")
 		public String Nutrionist() {
 			return "Nutrionist";
 		}
 	
 	//AdminProfile
-	@GetMapping("adminprofile")
+	/*
+	  @GetMapping("adminprofile")
 	    public String adminprofile(HttpSession session) {
 		//session.invalidate();
+		
 		return "Profile";
-	}
+		
+	}*/
+
 		//return "Profile";
 	
 	
@@ -61,7 +69,7 @@ public class AdminController {
 	@GetMapping("edituser")
 	public String editVehicle(Integer userId,Model model) {
 		Optional<UserEntity> op = repositoryUser.findById(userId);
-		if (op.isEmpty()) {
+		if (op.isEmpty()) { 
 			return "redirect:/newusers";
 		} else {
 			model.addAttribute("user",op.get());

@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Goals details</title>
 </head>
+
 <body>
+   
+   <h1>Goal details </h1>
+   
+
 
 </body>
 </html>
