@@ -18,32 +18,30 @@
 
     <!-- Users Section -->
     <li class="nav-item">
-      <a class="nav-link collapsed text-success" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-people-fill"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+      <a class="nav-link text-success fw-bold" href="signup">
+        <i class="bi bi-speedometer2"></i>
+        <span>Add user</span>
       </a>
-      <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="signup">
-            <i class="bi bi-person-plus"></i><span>Add User</span>
-          </a>
-        </li>
-        <li>
-          <a href="newusers">
-            <i class="bi bi-list-ul"></i><span>List Users</span>
-          </a>
-        </li>
-      </ul>
+     
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link text-success fw-bold" href="listuser">
+        <i class="bi bi-speedometer2"></i>
+        <span>Listuser</span>
+      </a>
+     
     </li>
 
     <!-- Nutritionist Section -->
     <li class="nav-item">
-      <a class="nav-link collapsed text-success" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-heart-pulse"></i><span>Nutritionist</span><i class="bi bi-chevron-down ms-auto"></i>
+      <a class="nav-link collapsed text-success" data-bs-target="#reports-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-heart-pulse"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
-      <ul id="forms-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+      <ul id="reports-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
         <li>
-          <a href="nutrionist">
-            <i class="bi bi-person-plus"></i><span>Add Nutritionist</span>
+          <a href="usersreport">
+            <i class="bi bi-person-plus"></i><span>User reports</span>
           </a>
         </li>
         <li>

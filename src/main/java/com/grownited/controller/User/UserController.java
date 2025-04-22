@@ -94,14 +94,18 @@ public class UserController {
 		
 		//Takes user to edit profile jsp
 		@GetMapping("edituserprofile")
-		public String editMyProfile(HttpSession httpSession) {
+		public String editMyProfile(HttpSession httpSession , Model model) {
 			String role = (String) ((UserEntity) httpSession.getAttribute("user")).getRole();
 			System.out.println(role);
 			if (role.equalsIgnoreCase("User")) {
+				System.out.println("i am user"
+						+ "");
 				return "User/Editprofile";
 			}else if(role.equalsIgnoreCase("Nutrionist")){
-			
-				return "Nutrionist/EditProfile";//admin profile
+				model.addAttribute("role" , role);
+			    System.out.println(role);
+				return "User/Editprofile";//admin profile
+				
 			}
 			else {
 				return "Profile";
@@ -114,6 +118,7 @@ public class UserController {
 		//When the form on edit user is submitted, this url is hit
 		@PostMapping("updateuserprofile")
 		public String updateUserProfile(UserEntity userEntity, MultipartFile image) { //MultipartFile profilePic
+			System.out.println(userEntity.getUserId());
 			Optional<UserEntity> op = repositoryUser.findById(userEntity.getUserId());
 			if (op.isEmpty()) {
 				return "redirect:/edituserprofile";
@@ -134,21 +139,31 @@ public class UserController {
 			entityUser.setLastname(userEntity.getLastname());
 			entityUser.setEmail(userEntity.getEmail());
 			entityUser.setContactno(userEntity.getContactno());
-			//entityUser.setAboutMe(userEntity.getAboutMe());
-			//entityUser.setState(userEntity.getState());
+			
 			entityUser.setCity(userEntity.getCity());
-			//entityUser.setAge(userEntity.getAge());
 			
 			
-			repositoryUser.save(entityUser);
+			
+			
 			
 			if (entityUser.getRole().equalsIgnoreCase("User")) {
-				return "redirect:/personalprofile";
+				repositoryUser.save(entityUser);
+				return "redirect:/gotopersonalprofile";
+				
+			}
+			
+			else if (entityUser.getRole().equalsIgnoreCase("Nutrionist")){
+				
+		         entityUser.setAboutus(userEntity.getAboutus());
+		         entityUser.setEducation(userEntity.getEducation());
+		         entityUser.setExperiance(userEntity.getExperiance());
+		         repositoryUser.save(entityUser);
+		         return "redirect:/gotopersonalprofile";
+				//return "redirect:/journalistpersonalprofile";
 			}
 			
 			else {
-				 return "redirect:admin/Profile";
-				//return "redirect:/journalistpersonalprofile";
+				return "AdminDashboard";
 			}
 			
 		}

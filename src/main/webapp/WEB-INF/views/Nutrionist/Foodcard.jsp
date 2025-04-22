@@ -2,10 +2,21 @@
 
 
 <div class="container d-flex justify-content-center col-span-4 h-[350px]">
-  <div class="nutrition-card position-relative" id = "foodcard">
-    <img src="assets/img/brocalli.jpeg" class="img-fluid w-100" alt="Broccoli">
+  <div class="nutrition-card position-relative w-full" id = "foodcard">
+    <div class = "bg-cover bg-no-repeat h-[43%] w-full" style = "background-image:url('${food.foodPicPath}');">
+    
+   <%--  <img src="${food.foodPicPath}" class="img-fluid w-100"  alt="Broccoli">--%>
     <div class="badge-top">${food.dietype}</div> <!-- dietype -->
-    <div class="content">
+      </div>
+      
+      <a href="editfood?foodid=${food.foodid}" 
+       class="btn btn-sm btn-primary position-absolute" 
+       style="top: 10px; right: 10px; z-index: 2;">
+      Edit
+    </a>
+       
+    <div class="content"> 
+      
       <h4>${food.foodname}</h4> <!-- foodname -->
       <small>Category: ${food.foodcategory}</small> <!-- foodcategory -->
 

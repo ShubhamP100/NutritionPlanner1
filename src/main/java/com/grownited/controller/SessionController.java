@@ -1,14 +1,15 @@
 package com.grownited.controller;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import com.grownited.entity.*;
+
+import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepo;
 import com.grownited.service.Mailservice;
 
@@ -53,7 +54,8 @@ public class SessionController {
     	         String encPassword = encoder.encode(userEntity.getPassword());
  		         userEntity.setPassword(encPassword);
     	        
- 		        //userEntity.setRole("user");//
+ 		        //userEntity.setRole("user");/
+ 		         userEntity.setCreatedAt(LocalDate.now());
     	         
     	 		 repositoryuser.save(userEntity);//insert query 
     	 	     System.out.println(userEntity.getEmail() + "" + userEntity.getFirstName() );
@@ -61,6 +63,7 @@ public class SessionController {
     	 	     
                 return "Login";		 
     	} 
+    
     
     @PostMapping("/authenticate")
     public String authenticate(String email,String password,Model model, HttpSession session) {

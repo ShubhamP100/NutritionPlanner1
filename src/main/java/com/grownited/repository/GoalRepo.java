@@ -21,6 +21,11 @@ public interface GoalRepo extends JpaRepository<GoalEntity , Integer>{
 	List<Goaldto> goals(@Param("nutriid") Integer user_id);
 	
 	Optional<GoalEntity> findByUserId(Integer userId);
+	
+	
+	@Query(value ="select count(*) from goals where status='approved' ",nativeQuery=true)
+	Integer GoalsCount();
+	
 }
 
 

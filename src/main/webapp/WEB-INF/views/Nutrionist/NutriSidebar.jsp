@@ -31,15 +31,8 @@
       </ul>
     </li>
     
-    <!-- Register detais -->
-    <li class="nav-item">
-      <a class="nav-link text-success" href="newuser">
-        <i class="bi bi-calculator"></i>
-        <span>Register</span>
-      </a>
-    </li>
-
-    <!-- Meals Section -->
+    
+    <!-- Meals Section 
     <li class="nav-item">
       <a class="nav-link collapsed text-success" data-bs-target="#meals-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-egg-fried"></i><span>Nutrionist</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -53,9 +46,11 @@
         </li>
       </ul>
     </li>
+	
+	-->
 
 
-    <!-- Meals Section -->
+    <!-- Meals Section 
     <li class="nav-item">
       <a class="nav-link collapsed text-success" data-bs-target="#meals-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-egg-fried"></i><span>Meals</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -69,35 +64,40 @@
         </li>
       </ul>
     </li>
+	
+	<li class="nav-item">
+	     <a class="nav-link collapsed text-success" data-bs-target="#meals-nav" data-bs-toggle="collapse" href="#">
+	       <i class="bi bi-egg-fried"></i><span>Fooditems</span><i class="bi bi-chevron-down ms-auto"></i>
+	     </a>
+	     <ul id="meals-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+	       
+	       <li>
+	         <a href="add-item">
+	           <i class="bi bi-circle"></i><span>Add Fooditem</span>
+	         </a>
+	       </li>
+		   <li>
+		   	  <a href="list-item">
+		   	       <i class="bi bi-circle"></i><span>List Fooditem</span>
+		   	      </a>
+		    </li>
+	     </ul>
+	   </li>
+	   -->
 
     <!-- Calorie Calculator -->
-    <li class="nav-item">
-      <a class="nav-link text-success" href="/user/calorie-calculator">
-        <i class="bi bi-calculator"></i>
-        <span>Calorie Calculator</span>
-      </a>
-    </li>
+    
     
     <!-- Charts of user -->
-    <li class="nav-item">
-      <a class="nav-link text-success" href="/user/calorie-calculator">
-        <i class="bi bi-calculator"></i>
-        <span>Charts</span>
-      </a>
-    </li>
+    
     
 
     <!-- Water Intake -->
-    <li class="nav-item">
-      <a class="nav-link text-success" href="/user/water-intake">
-        <i class="bi bi-droplet-half"></i>
-        <span>Water Intake</span>
-      </a>
-    </li>
+    
 
     <!-- Profile -->
     <li class="nav-item">
-      <a class="nav-link text-success" href="/personalprofile">
+      <a class="nav-link text-success" href="/gotopersonalprofile">
         <i class="bi bi-person-circle"></i>
         <span>Profile</span>
       </a>

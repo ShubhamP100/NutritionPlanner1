@@ -10,19 +10,20 @@
 
 <title>Admin | List User</title>
 
-<jsp:include page="Admincss.jsp"></jsp:include>
+<jsp:include page="../Admincss.jsp"></jsp:include>
 
 
 
 <link href="css/dataTables.css"></link>
 <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"></link>
+
+      <link href="https://cdn.datatables.net/buttons/3.2.2/css/buttons.dataTables.css" rel="stylesheet" />
 </head>
 <body>
+	<jsp:include page="../AdminHeader.jsp"></jsp:include>
 
-	<jsp:include page="AdminHeader.jsp"></jsp:include>
-
-	<jsp:include page="AdminSidebar.jsp"></jsp:include>
+	<jsp:include page="../AdminSidebar.jsp"></jsp:include>
 
 	<main id="main" class="main">
 
@@ -63,11 +64,11 @@
 												<th>contactno</th>
 												<th>city</th>
 													<th>role</th>
-													<th>Action</th>
+													
 											</tr>
 										</thead>
 				       <tbody>
-							<c:forEach items="${listUser}" var="us">
+							<c:forEach items="${Usersreport}" var="us">
 									<tr>
 										
                                         <td>${us.firstName}</td>
@@ -78,18 +79,6 @@
                                        
                                          <td>${us.city}</td>
                                           <td>${us.role}</td>
-                                           <td>
-										
-										       <a href="edituser?userId=${us.userId}" class="btn btn-warning btn-sm">
-                                              <i class="fas fa-edit"></i> Edit
-                                              </a>
-                                              <a href="deleteuser?userId=${us.userId}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">
-                                              <i class="fas fa-trash"></i> Delete
-                                              </a>
-                                              <a href="viewuser?userId=${us.userId}" class="btn btn-info btn-sm">
-                                              <i class="fas fa-eye"></i> View
-                                              </a>
-                                           </td> 
                                          </tr>
                                          </c:forEach>
                                              </tbody>
@@ -121,9 +110,9 @@
 	<!-- main content end  -->
 
 
-	<jsp:include page="AdminFooter.jsp"></jsp:include>
+	<jsp:include page="../AdminFooter.jsp"></jsp:include>
 
-	<jsp:include page="Adminjs.jsp"></jsp:include>
+	<jsp:include page="../Adminjs.jsp"></jsp:include>
 	
 	<!-- js files
 	 <script src="js/dataTables.js"></script>
@@ -134,16 +123,41 @@
 
 	  
   
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>  
-    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+ 
+ 	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+ 	<script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.min.js"></script>
+ 	<script src="https://cdn.datatables.net/buttons/3.2.2/js/dataTables.buttons.js"></script>
+ 	<script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.dataTables.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+ 	<script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.html5.min.js"></script>
+ 	<script src="https://cdn.datatables.net/buttons/3.2.2/js/buttons.print.min.js"></script>
 
 	<script type="text/javascript"> // idr yeh text/js likha he
-
-	$(document).ready( function () {
-	    $('#myTable').DataTable();
-	} );
+	
+	 
+ 	$( document ).ready(function() {
+ 		//let table = new DataTable('#myTable');
+ 	
+ 		new DataTable('#myTable', {
+ 	 	    layout: {
+ 	 	        topStart: {
+ 	 	            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+ 	 	        }
+ 	 	    }
+ 	 	});
+ 	
+ 	});
+ 	
+ 	
+ 	
+ 	
+ 	
+	
+	
 	</script>
 
 </body>

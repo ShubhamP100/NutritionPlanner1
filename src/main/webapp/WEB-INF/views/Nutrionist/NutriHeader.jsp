@@ -26,7 +26,7 @@
       <li><h6 class="dropdown-header">${user.firstName} ${user.lastname}<br><small>${user.role}</small></h6></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="gotopersonalprofile"><i class="bi bi-person me-2"></i> My Profile</a></li>
-      <li><a class="dropdown-item" href="EditProfile"><i class="bi bi-gear me-2"></i> Edit Profile</a></li>
+      <li><a class="dropdown-item" href="edituserprofile"><i class="bi bi-gear me-2"></i> Edit Profile</a></li>
       <li><a class="dropdown-item" href="logout"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
     </ul>
   </div>

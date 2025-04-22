@@ -30,6 +30,9 @@ public interface Foodrepo  extends JpaRepository<FoodEntity, Integer>{
 	List<FoodEntity> getFilteredFoodByDietType(@Param("dietType") String foodCategory);
 	
 	
+	@Query(value ="select count(*) from foods ",nativeQuery=true)
+	Integer FoodCount();
+	
 	
 	
 	

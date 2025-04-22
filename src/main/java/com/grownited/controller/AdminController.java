@@ -1,25 +1,43 @@
-package com.grownited.controller.admin;
+package com.grownited.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import com.grownited.entity.UserEntity;
-import com.grownited.repository.UserRepo;
-
-import jakarta.servlet.http.HttpSession;
-
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.grownited.entity.UserEntity;
+import com.grownited.repository.Foodrepo;
+import com.grownited.repository.GoalRepo;
+import com.grownited.repository.UserRepo;
 @Controller
 public class AdminController {
 	
 	@Autowired
 	UserRepo repositoryUser;
+	
+	@Autowired
+	GoalRepo repogoal;
+	
+	@Autowired 
+	Foodrepo repofood;
 
 	@GetMapping("admindashboard")
-	public String adminDashboard() {
+	public String adminDashboard(Model model) {
+		List<Integer> userspermonth= new ArrayList<>();
+		model.addAttribute("goalsApproved" , repogoal.GoalsCount());
+		model.addAttribute("foodItems" , repofood.FoodCount());
+		model.addAttribute("totalUsers" , repositoryUser.count());
+		model.addAttribute("totalnutritionists" , repositoryUser.NutriCount());
+		for(int i=1;i<=12;i++) {
+			userspermonth.add(repositoryUser.Months(i));
+		}
+		System.out.println(userspermonth.get(3));
+		model.addAttribute("month",userspermonth);
 		return "Admindashboard";
 	}
 	@GetMapping("adminhome")
@@ -42,6 +60,31 @@ public class AdminController {
 	}*/
 
 		//return "Profile";
+	
+	@GetMapping("listuser")
+	
+	public String listUser(Model model) {
+		List<UserEntity> userList = repositoryUser.findAll();
+	   model.addAttribute("listUser",userList);
+	   
+	   
+		
+		
+		return "ListUser";
+	}
+	
+@GetMapping("usersreport")
+	
+	public String Reportuser(Model model) {
+		List<UserEntity> usersreport = repositoryUser.findAll();
+	   model.addAttribute("Usersreport", usersreport);
+	   
+	   
+		
+		
+		return "Reports/ReportUser";
+	}
+		
 	
 	
 	@GetMapping("viewuser")

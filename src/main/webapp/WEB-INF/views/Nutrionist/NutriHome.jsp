@@ -13,7 +13,6 @@
 
 <jsp:include page="Nutricss.jsp"></jsp:include>
 
-</head>
 <body>
  
   <jsp:include page ="NutriHeader.jsp"></jsp:include>
@@ -21,123 +20,102 @@
    
    <main id="main" class="main">
    
+	<section class="nutrition-welcome-section d-flex justify-content-center align-items-center">
+	  <div class="nutrition-box text-center shadow-sm">
+	    <h1 class="nutrition-title">Welcome, <span class="username">${user.firstName}</span> 🥗</h1>
+	    <p class="nutrition-subtext">Balance your plate, balance your life — with the right nutritional help.</p>
+	    
+	    <div class="nutrition-grid mt-4">
+	      <div class="nutrition-card">
+	        <h4>Track Calories</h4>
+	        <p>Fuel your body, feed your goals guided by expert nutritionists.</p>
+	      </div>
+	      <div class="nutrition-card">
+	        <h4>Plan Meals</h4>
+	        <p>Let food be your first medicine — and your nutritionist the guide</p>
+	      </div>
+	      <div class="nutrition-card">
+	        <h4>Stay Hydrated</h4>
+	        <p>Eat better. Live stronger. Thrive longer</p>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+
+	<style>
+	.nutrition-welcome-section {
+	  height: 80vh;
+	  background: linear-gradient(135deg, #e0f7e9, #c1f0dc);
+	  padding: 40px 20px;
+	  border-radius: 20px;
+	  margin: 20px;
+	}
+
+	.nutrition-box {
+	  background: #ffffff;
+	  padding: 40px 30px;
+	  border-radius: 16px;
+	  max-width: 800px;
+	  width: 100%;
+	}
+
+	.nutrition-title {
+	  font-size: 2.5rem;
+	  font-weight: bold;
+	  color: #2f5d62;
+	}
+
+	.username {
+	  color: #4caf50;
+	}
+
+	.nutrition-subtext {
+	  font-size: 1.2rem;
+	  color: #555;
+	  margin-top: 10px;
+	}
+
+	.nutrition-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	  gap: 20px;
+	  margin-top: 30px;
+	}
+
+	.nutrition-card {
+	  background: #f1faf6;
+	  border-radius: 12px;
+	  padding: 20px;
+	  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+	  transition: transform 0.3s ease;
+	}
+
+	.nutrition-card:hover {
+	  transform: translateY(-5px);
+	}
+
+	.nutrition-card h4 {
+	  color: #2e7d32;
+	  font-weight: bold;
+	  margin-bottom: 10px;
+	}
+
+	.nutrition-card p {
+	  color: #555;
+	  font-size: 0.95rem;
+	}
+	</style>
+
    
    
-   <div class="pagetitle ">
-      <span>Welcome</span> <h1>${user.firstName }</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="homee">Home</a></li>
-          <!--<li class="breadcrumb-item active">Dashboard</li>-->
-        </ol>
-      </nav>
-    </div>
-    <section class="section dashboard">
-      <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
-
-            <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                
-
-                <div class="card-body">
-                  <h5 class="card-title">Sales</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Sales Card -->
-
-            <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card revenue-card">
-
-                
-                <div class="card-body">
-                  <h5 class="card-title">Revenue</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-currency-dollar"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Revenue Card -->
-
-            <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
-
-              <div class="card info-card customers-card">
-
-               
-
-                <div class="card-body">
-                  <h5 class="card-title">Customers</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div><!-- End Customers Card -->
-
-            <!-- Reports -->
-            <!-- End Reports -->
-
-            <!-- Recent Sales -->
-            <!-- End Recent Sales -->
-
-            <!-- Top Selling -->
-            <!-- End Top Selling -->
-
-          </div>
-        </div><!-- End Left side columns -->
-
-        <!-- Right side columns -->
-        <!-- End Right side columns -->
-
-      </div>
-    </section>
-  
-  
   <!-- main over here -->
   </main>
   <jsp:include page="NutriFooter.jsp"></jsp:include>
   
-  
-  <jsp:include page="Nutrijs.jsp"></jsp:include>
-  <script src="assets/js/main.js"> </script>
+ 
+
+  <jsp:include page="Nutrijs.jsp"></jsp:include> 
+ 
   
 </body>
 </html>

@@ -41,8 +41,9 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2>${user.first_name} </h2>
+              <img src="${user.profilepic}" alt="Profile" class="rounded-circle">
+              <h2>${user.firstName}
+				 </h2>
              
               
             </div>
@@ -80,7 +81,7 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">${user.first_name} ${user.lastname}</div>
+                    <div class="col-lg-9 col-md-8">${user.firstName} ${user.lastname}</div>
                   </div>
 
                  

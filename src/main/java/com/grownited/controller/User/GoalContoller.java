@@ -35,6 +35,7 @@ public class GoalContoller {
 		Integer userId = (Integer) ((UserEntity) session.getAttribute("user")).getUserId();
 		entitygoal.setUserId(userId);
         entitygoal.setCreatedAt(LocalDate.now());
+        entitygoal.setStatus("pending");
 		repogoal.save(entitygoal);
 		return "User/Listgoal";
 	}

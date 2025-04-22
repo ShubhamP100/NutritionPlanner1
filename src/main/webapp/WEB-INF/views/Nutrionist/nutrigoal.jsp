@@ -79,7 +79,7 @@
                                         
 										<c:if test="${g.status eq 'approved'}">   
 										<td>
-									   <h1>hello</h1>  		
+									   <h1>Pending</h1>  		
 									    
 									</td>
 									</c:if>
@@ -88,6 +88,7 @@
 									 <c:if test = "${g.status eq 'pending'}">
 										<td class = "flex gap-2">
 											<p>pending</p>
+											
 											<a href="viewparticulargoal?goalid=${g.goal_id}" class="btn btn-warning btn-sm">
 																				    <i class="fas fa-edit">View more </i> 
 																				</a>                

@@ -38,10 +38,10 @@
 
 		
 	<form action="updateuserprofile" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="${user.userId}" />
+        <input type="hidden" name="userId" value="${user.userId}" />
 
         <label>First-Name:</label>
-        <input type="text" name="firstName" value="${user.firstname}"  /><br><br>
+        <input type="text" name="firstName" value="${user.firstName}"  /><br><br>
         
         <label>Last-Name:</label>
         <input type="text" name="lastname" value="${user.lastname}"  /><br><br>
@@ -62,15 +62,17 @@
 		
 		<input type="file" name="image" value="${user.profilepic}"><br><br>
         
+		<c:if test = "${role eq 'nutrionist'}"> 
         <label>About us</label>
-        <input type="text" name="contactno" value="${user.aboutus}" /><br><br>
+        <input type="text" name="aboutus" value="${user.aboutus}" /><br><br>
         
          <label>Experiance</label>
-        <input type="text" name="city" value="${user.experiance}" /><br><br>
+        <input type="text" name="experiance" value="${user.experiance}" /><br><br>
         
         <label>Education</label>
-        <input type="text" name="role" value="${user.education}" /><br><br>
-        
+        <input type="text" name="education" value="${user.education}" /><br><br>
+		
+		</c:if>
         <button type="submit">Update</button>
     </form>
                             

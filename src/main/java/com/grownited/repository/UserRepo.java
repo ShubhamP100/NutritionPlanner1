@@ -22,6 +22,16 @@ public interface UserRepo extends JpaRepository<UserEntity, Integer>{
 	@Query(value ="select g.* from goals g where g.user_id=:userid",nativeQuery=true)
 	GoalEntity goaltype (@Param("userid") Integer userid); 
 	
+	@Query(value="select count(*) from users where role ='user'", nativeQuery=true)
+	Integer UserCount();
+
+	@Query(value="select count(*) from users where role ='Nutrionist'",nativeQuery=true)
+	Integer NutriCount();
+	
+	@Query(value="select count(*) from users where month(created_at)=:value",nativeQuery=true)
+	Integer Months(@Param("value") Integer value);
+	
+	
 	
 	
 }

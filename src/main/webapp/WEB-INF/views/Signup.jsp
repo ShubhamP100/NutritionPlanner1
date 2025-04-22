@@ -136,7 +136,7 @@
                 <option value="">Select Role</option>
                 <option value="user">USER</option>
                 
-                <option value="nutrionist">Nutritionist</option>
+                <option value="nutrionist">Nutrionist</option>
                 
             </select>
       </div>

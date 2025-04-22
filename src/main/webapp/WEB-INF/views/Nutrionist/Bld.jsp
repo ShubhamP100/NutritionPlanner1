@@ -130,7 +130,7 @@
          <c:if test = "${finish eq 'no'}">
         <!-- Lunch -->
         <div class="meal-card" style = "width:100%;">
-            <div class="meal-image" style="background-image: url('images/lunch.jpg');"></div>
+            <div class="meal-image" style="background-image: url('assets/img/lunch.jpg');"></div>
             <div class="meal-content">
                 <div class="meal-title">Lunch</div>
                 <div class="meal-quote">"Fuel up with something wholesome and filling."</div>
@@ -143,7 +143,7 @@
         <c:if test = "${finish eq 'yes'}">
         <!-- Lunch -->
         <div class="meal-card" style = "width:100%; background-color:#00FF00">
-            <div class="meal-image" style="background-image: url('images/lunch.jpg');"></div>
+            <div class="meal-image" style="background-image: url('assets/img/lunch.jpg');"></div>
             <div class="meal-content">
                 <div class="meal-title">Lunch</div>
                 <div class="meal-quote">"Fuel up with something wholesome and filling."</div>
@@ -160,7 +160,7 @@
         
         
         <div class="meal-card" style = "width:100%; ">
-            <div class="meal-image" style="background-image: url('images/dinner.jpg');"></div>
+            <div class="meal-image" style="background-image: url('assets/img/dinner.jpg');"></div>
             <div class="meal-content">
                 <div class="meal-title">Dinner</div>
                 <div class="meal-quote">"End the day with a light and healthy meal."</div>
@@ -177,7 +177,7 @@
         
         
         <div class="meal-card" style = "width:100%; background-color: #4d8c57 ">
-            <div class="meal-image" style="background-image: url('images/dinner.jpg');"></div>
+            <div class="meal-image" style="background-image: url('assets/img/dinner.jpg');"></div>
             <div class="meal-content">
                 <div class="meal-title">Dinner</div>
                 <div class="meal-quote">"End the day with a light and healthy meal."</div>
